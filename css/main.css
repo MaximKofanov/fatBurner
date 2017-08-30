@@ -15,6 +15,10 @@
   src: url(../fonts/open-sans-bold.ttf); }
 
 @font-face {
+  font-family: open-sans-condensed-bold;
+  src: url(../fonts/open-sans-condensed-bold.ttf); }
+
+@font-face {
   font-family: Very-Berry-Pro-Regular;
   src: url(../fonts/VeryBerryPro-Regular.ttf); }
 
@@ -22,180 +26,418 @@ body {
   margin: 0;
   padding: 0;
   color: #282828;
-  font-family: open-sans; }
+  font-family: open-sans;
+  overflow-x: hidden; }
+
+header {
+  position: relative; }
 
 .content {
   max-width: 1000px;
+  min-width: 360px;
   margin: auto; }
-  .content .pinkColor {
+  .content .pinkColor .pinkColorHead {
     position: absolute;
     left: 0;
     background-color: #FFB5DC;
     width: 100%;
     height: 733px;
+    z-index: -6; }
+  .content .pinkColor .fireInTheHead {
+    background-image: url(../img/head_sect_1/fireInTheHead.png);
+    width: 2000px;
+    height: 647px;
+    position: absolute;
+    z-index: -5;
+    left: 0;
+    top: 110px;
+    left: 50%;
+    right: 50%;
+    margin-left: -1000px;
+    opacity: 0.1; }
+  .content .pinkColor .textureInTheHead {
+    background-image: url(../img/head_sect_1/textureHead.png);
+    position: absolute;
+    width: 2000px;
+    height: 1733px;
+    z-index: -4;
+    opacity: 0.3;
+    left: 50%;
+    right: 50%;
+    margin-left: -1000px; }
+
+.headLogo {
+  width: 100%;
+  height: 100px;
+  white-space: nowrap; }
+  .headLogo .imgLogoHead {
+    width: 210px;
+    height: 34px;
+    background-image: url(../img/head_sect_1/headLogoImg.png);
+    background-repeat: no-repeat;
+    display: inline-block;
+    margin-left: -40px; }
+  .headLogo h1 {
+    display: inline-block;
+    font-family: Very-Berry-Pro-Regular;
+    font-weight: normal;
+    font-size: 75px;
+    margin: 0;
+    padding: 0;
+    line-height: 1.3; }
+  .headLogo p {
+    display: inline-block;
+    font-size: 16px;
+    font-family: open-sans;
+    border-left: 1px solid #E27A98;
+    padding-left: 10px;
+    margin-left: 10px;
+    line-height: 1.2;
+    padding: 5px 10px; }
+  .headLogo .imgLogoHead.imgLogoHeadReversed {
+    background-position: -210px 0;
+    margin-left: 10px; }
+
+.descriptionHead {
+  text-align: center; }
+  .descriptionHead strong {
+    text-transform: uppercase;
+    font-size: 30px;
+    line-height: 1.3;
+    color: #8A0C3B; }
+    .descriptionHead strong span {
+      color: #9727E7; }
+
+.descImg {
+  background-image: url(../img/head_sect_1/headDescImg.png);
+  width: 209px;
+  height: 42px;
+  margin: 15px auto; }
+
+.pluses {
+  position: relative; }
+  .pluses .plusesCream {
+    background-image: url(../img/head_sect_1/stockDamaskHead.jpg);
+    width: 850px;
+    height: 337px;
+    -webkit-border-radius: 15px;
+            border-radius: 15px;
+    margin-left: 15px;
+    position: relative;
     z-index: -1; }
-  .content header {
-    position: relative; }
-    .content header .headLogo {
+    .pluses .plusesCream ul {
+      width: 305px;
+      position: absolute;
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+      left: 355px;
+      top: 10px;
+      color: #fff;
+      font-size: 18px; }
+      .pluses .plusesCream ul li {
+        padding-bottom: 10px; }
+        .pluses .plusesCream ul li img {
+          position: absolute;
+          left: -60px; }
+        .pluses .plusesCream ul li strong {
+          color: #C671EE; }
+
+.form {
+  width: 355px;
+  height: 522px;
+  position: absolute;
+  top: -40px;
+  right: -40px; }
+  .form .headForm {
+    width: 100%;
+    height: 80px;
+    background-color: #37E9DE;
+    position: absolute;
+    -webkit-border-radius: 10px;
+            border-radius: 10px;
+    font-family: open-sans-bold;
+    left: -10px;
+    top: -10px;
+    text-align: center;
+    z-index: 4; }
+    .form .headForm h3 {
+      margin: 5px 0 2px 0;
+      font-size: 20px;
+      color: #A20639; }
+    .form .headForm span {
+      text-decoration: line-through;
+      font-size: 24px;
+      color: #282828;
+      margin: 0;
+      line-height: 0.9; }
+    .form .headForm p {
+      font-size: 35px;
+      color: #A20639;
+      margin: 0;
+      line-height: 1; }
+  .form .headFormTriangle {
+    width: 0;
+    height: 0;
+    border-left: 170px solid transparent;
+    border-right: 170px solid transparent;
+    border-top: 30px solid #37E9DE;
+    z-index: 2;
+    margin-top: 79px;
+    position: absolute;
+    top: -10px; }
+
+.formBody {
+  width: 334px;
+  height: 500px;
+  background-color: #fff;
+  -webkit-border-radius: 25px;
+          border-radius: 25px;
+  -webkit-box-shadow: 0 0 25px rgba(122, 122, 122, 0.5);
+          box-shadow: 0 0 25px rgba(122, 122, 122, 0.5); }
+  .formBody .leaveOrder {
+    font-size: 16px;
+    padding-top: 105px;
+    text-align: center; }
+    .formBody .leaveOrder span {
+      font-family: open-sans-bold; }
+  .formBody form.forms {
+    text-align: center;
+    padding: 0 15px; }
+    .formBody form.forms p {
+      text-align: left;
+      margin: 0;
+      color: #CECFCE; }
+    .formBody form.forms input {
       width: 100%;
-      height: 100px;
-      white-space: nowrap; }
-      .content header .headLogo .imgLogoHead {
-        width: 210px;
-        height: 34px;
-        background-image: url(../img/headLogoImg.png);
-        background-repeat: no-repeat;
-        display: inline-block;
-        margin-left: -40px; }
-      .content header .headLogo h1 {
-        display: inline-block;
-        font-family: Very-Berry-Pro-Regular;
-        font-weight: normal;
-        font-size: 75px;
-        margin: 0;
-        padding: 0;
-        line-height: 1.3; }
-      .content header .headLogo p {
-        display: inline-block;
-        font-size: 16px;
-        font-family: open-sans;
-        border-left: 1px solid #E27A98;
-        padding-left: 10px;
-        margin-left: 10px;
-        line-height: 1.2;
-        padding: 5px 10px; }
-      .content header .headLogo .imgLogoHead.imgLogoHeadReversed {
-        background-position: -210px 0;
-        margin-left: 10px; }
-    .content header .descriptionHead {
-      text-align: center; }
-      .content header .descriptionHead strong {
-        text-transform: uppercase;
-        font-size: 30px;
-        line-height: 1.3;
-        color: #8A0C3B; }
-        .content header .descriptionHead strong span {
-          color: #9727E7; }
-      .content header .descriptionHead .descImg {
-        background-image: url(../img/headDescImg.png);
-        width: 209px;
-        height: 42px;
-        margin: 15px auto; }
-    .content header .pluses {
-      position: relative; }
-      .content header .pluses .plusesCream {
-        background-image: url(../img/stockDamaskHead.jpg);
-        width: 850px;
-        height: 337px;
-        -webkit-border-radius: 15px;
-                border-radius: 15px;
-        margin-left: 15px;
-        position: relative; }
-        .content header .pluses .plusesCream ul {
-          width: 305px;
-          position: absolute;
-          margin: 0;
-          padding: 0;
-          list-style-image: url(../img/listStyleImg.png);
-          left: 370px;
-          top: 10px;
-          color: #fff;
-          font-size: 18px; }
-          .content header .pluses .plusesCream ul li {
-            height: 60px; }
-            .content header .pluses .plusesCream ul li strong {
-              color: #C671EE; }
-      .content header .pluses .form {
-        width: 355px;
-        height: 522px;
-        position: absolute;
-        top: -40px;
-        right: -40px; }
-        .content header .pluses .form .headForm {
-          width: 100%;
-          height: 80px;
-          background-color: #37E9DE;
-          position: absolute;
-          -webkit-border-radius: 10px;
-                  border-radius: 10px;
-          left: -10px;
-          top: -10px; }
-        .content header .pluses .form .headFormTriangle {
-          width: 0;
-          height: 0;
-          border-left: 170px solid transparent;
-          border-right: 170px solid transparent;
-          border-top: 30px solid #37E9DE;
-          z-index: 2;
-          margin-top: 79px;
-          position: absolute;
-          top: -10px; }
-        .content header .pluses .form .formBody {
-          width: 334px;
-          height: 512px;
-          background-color: #fff;
-          -webkit-border-radius: 25px;
-                  border-radius: 25px;
-          -webkit-box-shadow: 0 0 25px rgba(122, 122, 122, 0.5);
-                  box-shadow: 0 0 25px rgba(122, 122, 122, 0.5); }
-      .content header .pluses .circleHead {
-        width: 90%;
-        height: 115px;
-        list-style-type: none;
-        margin: 0;
-        text-align: center;
-        margin-top: -3px;
-        font-size: 16px;
-        font-family: Bebas-Neue-Bold;
-        position: relative; }
-        .content header .pluses .circleHead .circ {
-          width: 116px;
-          height: 116px;
-          display: inline-block;
-          background-image: url(../img/circleHead.png);
-          position: relative; }
-          .content header .pluses .circleHead .circ span {
-            position: absolute;
-            top: 28px;
-            left: 0;
-            -webkit-transform: rotate(-15deg);
-                -ms-transform: rotate(-15deg);
-                    transform: rotate(-15deg); }
-      .content header .pluses .marksHead {
-        width: 336px;
-        height: 114px;
-        background-image: url(../img/marksHead.png);
-        position: absolute;
-        top: 110px;
-        left: 320px; }
-    .content header .girlHead {
-      background-image: url(../img/girlHead.png);
-      width: 321px;
-      height: 659px;
+      height: 40px;
+      -webkit-border-radius: 10px;
+              border-radius: 10px;
+      border: none;
+      background-color: #EFEFEF;
+      outline: none;
+      padding-right: 5px;
+      text-indent: 15px; }
+    .formBody form.forms button {
+      width: 100%;
+      height: 80px;
+      -webkit-border-radius: 40px;
+              border-radius: 40px;
+      -webkit-box-shadow: 0 10px;
+              box-shadow: 0 10px;
+      background-image: url(../img/head_sect_1/buttonGrad.png);
+      background-position: -170px -140px;
+      background-color: #51B700;
+      border: none;
+      margin-top: 10px;
+      font-size: 44px;
+      color: #396500;
+      text-transform: uppercase;
+      font-family: open-sans-condensed-bold;
+      cursor: pointer; }
+      .formBody form.forms button:active, .formBody form.forms button:focus {
+        -webkit-box-shadow: 0 5px;
+                box-shadow: 0 5px;
+        outline: 0;
+        margin-top: 15px; }
+    .formBody form.forms .shadowButton {
+      background-image: url(../img/head_sect_1/buttonShadow.png);
+      -webkit-background-size: cover;
+              background-size: cover;
+      width: 419px;
+      height: 60px;
       position: absolute;
-      top: 75px;
-      left: -140px;
-      z-index: 2; }
-    .content header .packageHead {
-      background-image: url(../img/packageHead.png);
-      width: 278px;
-      height: 406px;
+      bottom: 20px;
+      left: -45px; }
+  .formBody p.numbPackage {
+    font-size: 18px;
+    position: absolute;
+    bottom: 10px;
+    left: 25px; }
+    .formBody p.numbPackage span {
+      font-size: 24px;
+      color: #A20639;
+      font-family: open-sans-bold; }
+
+.circleHead {
+  width: 90%;
+  height: 115px;
+  list-style-type: none;
+  margin: 0;
+  text-align: center;
+  margin-top: -3px;
+  font-size: 16px;
+  font-family: Bebas-Neue-Bold;
+  position: relative;
+  z-index: -1; }
+  .circleHead .circ {
+    width: 116px;
+    height: 116px;
+    display: inline-block;
+    background-image: url(../img/head_sect_1/circleHead.png);
+    position: relative; }
+    .circleHead .circ span {
       position: absolute;
-      z-index: 3;
-      top: 362px;
-      left: 38px; }
-      .content header .packageHead .packageCircle {
-        background-image: url(../img/circleOnThePackage.png);
-        width: 138px;
-        height: 185px;
+      top: 28px;
+      left: 0;
+      -webkit-transform: rotate(-15deg);
+          -ms-transform: rotate(-15deg);
+              transform: rotate(-15deg); }
+
+.marksHead {
+  width: 336px;
+  height: 114px;
+  background-image: url(../img/head_sect_1/marksHead.png);
+  position: absolute;
+  top: 110px;
+  left: 320px; }
+
+.girlHead {
+  background-image: url(../img/head_sect_1/girlHead2.png);
+  width: 321px;
+  height: 659px;
+  position: absolute;
+  top: 75px;
+  left: -140px;
+  z-index: 2; }
+
+.packageHead {
+  background-image: url(../img/head_sect_1/packageHead.png);
+  width: 278px;
+  height: 406px;
+  position: absolute;
+  z-index: 3;
+  top: 362px;
+  left: 38px; }
+  .packageHead .packageCircle {
+    background-image: url(../img/head_sect_1/circleOnThePackage.png);
+    width: 138px;
+    height: 185px;
+    position: absolute;
+    left: 50px;
+    top: 5px;
+    text-align: center;
+    font-size: 16px;
+    font-family: Bebas-Neue-Bold; }
+    .packageHead .packageCircle p {
+      position: absolute;
+      top: 65px;
+      left: 22px;
+      color: #097B86; }
+
+.modelBodyWhiteBG {
+  width: 100%;
+  height: 785px;
+  background-color: #fff;
+  position: absolute;
+  left: 0;
+  top: 733px;
+  z-index: -2; }
+
+section.modelBody {
+  height: 785px;
+  background: #fff;
+  position: relative;
+  top: 35px;
+  z-index: -2; }
+
+.headM h2 {
+  text-align: center;
+  margin: 0;
+  padding-top: 70px;
+  font-size: 36px;
+  color: #A20639;
+  font-family: open-sans-bold; }
+
+.headM p {
+  text-align: center;
+  margin: 0;
+  font-size: 18px; }
+
+.creamConcealer {
+  margin-top: 35px; }
+  .creamConcealer h2 {
+    font-size: 30px;
+    font-family: open-sans-bold;
+    color: #A20639;
+    margin: 0;
+    line-height: 1; }
+    .creamConcealer h2 b {
+      color: #79B000; }
+  .creamConcealer p {
+    font-size: 18px; }
+  .creamConcealer ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    font-size: 18px; }
+    .creamConcealer ul li {
+      display: inline-block;
+      width: 37%;
+      padding-bottom: 20px;
+      height: 80px; }
+      .creamConcealer ul li p {
+        margin: 0;
+        padding-left: 100px;
+        padding-top: 5px; }
+      .creamConcealer ul li .correctorImg {
         position: absolute;
-        left: 50px;
-        top: 5px;
-        text-align: center;
-        font-size: 16px;
-        font-family: Bebas-Neue-Bold; }
-        .content header .packageHead .packageCircle p {
-          position: absolute;
-          top: 65px;
-          left: 22px;
-          color: #097B86; }
+        display: inline-block;
+        width: 80px;
+        height: 80px;
+        border: 1px solid #79B000;
+        -webkit-border-radius: 40px;
+                border-radius: 40px; }
+      .creamConcealer ul li:nth-child(1) .correctorImg {
+        background-image: url(../img/head_sect_1/correctorListImg.jpg);
+        background-position: -20px -40px; }
+      .creamConcealer ul li:nth-child(2) .correctorImg {
+        background-image: url(../img/head_sect_1/correctorListImg.jpg);
+        background-position: -20px -128px; }
+      .creamConcealer ul li:nth-child(3) .correctorImg {
+        background-image: url(../img/head_sect_1/correctorListImg.jpg);
+        background-position: -30px -232px; }
+      .creamConcealer ul li:nth-child(4) .correctorImg {
+        background-image: url(../img/head_sect_1/correctorListImg.jpg);
+        background-position: -30px -312px; }
+      .creamConcealer ul li:nth-child(5) .correctorImg {
+        background-image: url(../img/head_sect_1/correctorListImg.jpg);
+        background-position: -20px -412px; }
+      .creamConcealer ul li:nth-child(6) .correctorImg {
+        background-image: url(../img/head_sect_1/correctorListImg.jpg);
+        background-position: -20px -500px; }
+
+.girlModel2 {
+  width: 372px;
+  height: 670px;
+  background-image: url(../img/head_sect_1/model2.png);
+  position: absolute;
+  bottom: 0;
+  right: -70px;
+  z-index: -3; }
+  .girlModel2 .girlModel2Color {
+    background-image: url(../img/head_sect_1/model2Color.png);
+    position: absolute;
+    width: 275px;
+    height: 504px;
+    z-index: -2;
+    bottom: 10px;
+    right: 40px; }
+
+.meter {
+  position: absolute;
+  z-index: -7; }
+
+.meter1 {
+  background-image: url(../img/head_sect_1/meter1.jpg);
+  width: 689px;
+  height: 542px;
+  left: -600px;
+  bottom: -160px; }
+
+.meter2 {
+  background-image: url(../img/head_sect_1/meter2.jpg);
+  width: 689px;
+  height: 336px;
+  right: -450px;
+  top: -1px; }
