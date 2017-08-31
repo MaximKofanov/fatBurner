@@ -27,14 +27,16 @@ body {
   padding: 0;
   color: #282828;
   font-family: open-sans;
-  font-size: 18px; }
+  font-size: 18px;
+  overflow-x: hidden; }
 
 h2 {
   margin: 0;
   font-size: 36px;
   font-family: open-sans-bold;
   color: #A20639;
-  line-height: 1.1; }
+  line-height: 1.1;
+  overflow: hidden; }
 
 .content {
   max-width: 1000px;
@@ -265,7 +267,9 @@ form.forms {
   font-size: 18px;
   position: absolute;
   bottom: 10px;
-  left: 25px; }
+  left: 25px;
+  margin-top: 0;
+  margin-bottom: 10px; }
   .numbPackage span {
     font-size: 24px;
     color: #A20639;
@@ -550,6 +554,7 @@ form.forms {
   width: 937px;
   height: 937px;
   position: absolute;
+  overflow: hidden;
   top: -100px;
   right: -150px; }
   .cirleSect3:nth-child(1) {
@@ -595,8 +600,6 @@ form.forms {
 .fireFat {
   color: #A20639; }
   .fireFat h2 {
-    font-family: open-sans-bold;
-    font-size: 36px;
     text-transform: uppercase;
     text-align: center;
     margin: 0;
@@ -987,7 +990,6 @@ form.forms {
 .sect8 {
   background-image: url(../img/sect6_/sect8Fon.png);
   background-repeat: no-repeat;
-  width: 1028px;
   height: 587px;
   background-position: 0 150px;
   position: relative; }
@@ -1018,7 +1020,7 @@ form.forms {
   display: inline-block;
   text-align: center;
   padding: 0 10px 0 10px;
-  height: 800px;
+  height: 830px;
   float: left; }
   .girls9S b {
     font-family: Myriad-Pro-Regular;
@@ -1293,7 +1295,8 @@ footer {
   height: 120px;
   position: absolute;
   bottom: -170px;
-  padding-bottom: 20px; }
+  padding-bottom: 20px;
+  overflow: hidden; }
 
 .copirite {
   color: #9B6A7F;
