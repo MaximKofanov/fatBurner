@@ -40,7 +40,7 @@ h2 {
 
 .content {
   max-width: 1000px;
-  min-width: 360px;
+  min-width: 768px;
   margin: auto;
   z-index: 2;
   position: relative; }
@@ -1208,7 +1208,7 @@ footer {
 
 .plusesFoot {
   position: relative; }
-  .plusesFoot .plusesCreamFoot {
+  .plusesFoot .plusesCream {
     width: 850px;
     height: 337px;
     -webkit-border-radius: 15px;
@@ -1216,7 +1216,7 @@ footer {
     margin-left: 15px;
     position: relative;
     z-index: 1; }
-    .plusesFoot .plusesCreamFoot ul {
+    .plusesFoot .plusesCream ul {
       width: 305px;
       position: absolute;
       margin: 0;
@@ -1226,9 +1226,9 @@ footer {
       top: 10px;
       color: #fff;
       font-size: 18px; }
-      .plusesFoot .plusesCreamFoot ul li {
+      .plusesFoot .plusesCream ul li {
         padding-bottom: 10px; }
-        .plusesFoot .plusesCreamFoot ul li img {
+        .plusesFoot .plusesCream ul li img {
           position: absolute;
           left: -60px; }
   .plusesFoot .FootForm {
