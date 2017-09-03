@@ -1,39 +1,70 @@
 $(function(){
 
 	var heightHead = $(window).height();
-	$('.maskHead').css('height', heightHead);
-	$('header').css('height', heightHead);
-
+	if($(window).width() > 1200){
+		$('.maskHead').css('height', heightHead);
+		$('header').css('height', heightHead);		
+	}else{
+		heightHead = 600;
+		$('.maskHead').css('height', heightHead);
+		$('header').css('height', heightHead);				
+	}
 	//lang
 
 	var toggleLang = 0;
 	$('#RU').css('opacity', '1');
+	$('#RU.bottomLang').css('color', '#7AC142');
 	$('#RU').click(toggleLangf);
 	$('#EN').click(toggleLangf);
+	$('#RU.bottomLang').click(toggleLangf);
+	$('#EN.bottomLang').click(toggleLangf);
 
 	function toggleLangf(){
 		if(toggleLang === 0){
 			$('#RU').css('opacity', '0.7');
 			$('#EN').css('opacity', '1');
+			$('#EN.bottomLang').css('color', '#7AC142');
+			$('#RU.bottomLang').css('color', '#636163');
 			toggleLang++;
-			console.log(toggleLang);
 		}else if(toggleLang === 1){
 			$('#RU').css('opacity', '1');
 			$('#EN').css('opacity', '0.7');
+			$('#EN.bottomLang').css('color', '#636163');
+			$('#RU.bottomLang').css('color', '#7AC142');
 			toggleLang--;
-			console.log(toggleLang);
 		}
 	};
 
 	//menu
 
+	$('#buttonOpenLogoHead').click( function(){
+		$('#buttonOpenLogoHead').css('display', 'none')
+		$('.maskHead').slideToggle(400, function(){
+			$('.maskHead').css('display','block');
+			$('.logoHead').css('display','block');
+			$('.logoHead').css('position','absolute');
+			$('.maskHead').css('opacity','0.9');
+			$('#buttonOpenLogoHeadClose').css('display','block');
+		});
+	});
+
+	$('#buttonOpenLogoHeadClose').click(function(){
+		$('#buttonOpenLogoHeadClose').css('display','none');
+		$('#buttonOpenLogoHead').slideToggle(400, function(){
+			$('.logoHead').css('position','relative');
+			$('.maskHead').css('opacity','0.65');
+			$('.maskHead').css('display','none');
+			$('.logoHead').css('display','none');
+			$('#buttonOpenLogoHead').css('display','block');
+		});		
+	});
+
 	var heightMnuHead = ($('.mnuHead').css('height')).slice(0,3);
-	var newHeightMnuHead = 230+(+heightMnuHead)+'px';
 
 	$('#headMenu').click(function(){
 		$('.mnuHead').slideToggle(400, function(){
 			$('.mnuHead').css('display','block');
-			$('.mnuHead').css('height', newHeightMnuHead)
+			$('.mnuHead').css('height', heightMnuHead)
 			$('#headMenu').css('display','inline-block');
 		});
 	});
@@ -46,7 +77,12 @@ $(function(){
 
 	//slider
 
-	var sliderName = ['Есть молоко','Второй заголовок','Третий заголовок','Четвертый заголовок','Пятый заголовок'];
+	var sliderName = ['Есть молоко',
+	'Второй заголовок',
+	'Третий заголовок',
+	'Четвертый заголовок',
+	'Пятый заголовок'
+	];
 	var sliderDescription = [
 	'СОВРЕМЕННЫЙ СЕРВИС ДЛЯ ЖИТЕЛЕЙ ГОРОДОВ ПО ПРИОБРЕТЕНИЮ НАТУРАЛЬНЫХ МОЛОЧНЫХ ПРОДУКТОВ',
 	'Второе описание второе описание второе описание второе описание второе описание второе описание',
@@ -69,27 +105,29 @@ $(function(){
 
 	SliderHeadPre();
 
+	function getSlid(){
+		var wordOne = [];
+		for(var i = 0; i < sliderName[currentSlid].length; i++){
+			if(sliderName[currentSlid][i] != ' '){
+				wordOne.push(sliderName[currentSlid][i]);
+			}else{
+				break;
+			}
+		}
+		$('.wrapperHeadCaption h2').html('<span>'+wordOne.join('')+'</span><br>'+sliderName[currentSlid].slice(wordOne.length));
+		$('.textHead').html(sliderDescription[currentSlid]);
+		$('header').css('background-image', sliderImg[currentSlid]);
+		$('.circleB').css('opacity','0.4');
+		$('.circleB:nth-child('+(currentSlid+1)+')').css('opacity','1');	
+	}
+
 	function SliderHeadNext(){
 		$('.wrapperHeadCaption h2').show(function(){
 
 			if(currentSlid < sliderName.length-1){
 				currentSlid++;
 			}
-
-			var wordOne = [];
-
-			for(var i = 0; i < sliderName[currentSlid].length; i++){
-				if(sliderName[currentSlid][i] != ' '){
-					wordOne.push(sliderName[currentSlid][i]);
-				}else{
-					break;
-				}
-			}
-			$(this).html('<span>'+wordOne.join('')+'</span><br>'+sliderName[currentSlid].slice(wordOne.length));
-			$('.textHead').html(sliderDescription[currentSlid]);
-			$('header').css('background', ''+sliderImg[currentSlid]+'no-repeat center');
-			$('.circleB').css('opacity','0.4');
-			$('.circleB:nth-child('+(currentSlid+1)+')').css('opacity','1');
+			getSlid();
 		});
 	}
 
@@ -99,117 +137,36 @@ $(function(){
 			if(currentSlid <= sliderName.length && currentSlid !== 0){
 				currentSlid--;
 			}
-
-			var wordOne = [];
-
-			for(var i = 0; i < sliderName[currentSlid].length; i++){
-				if(sliderName[currentSlid][i] != ' '){
-					wordOne.push(sliderName[currentSlid][i]);
-				}else{
-					break;
-				}
-			}
-			$(this).html('<span>'+wordOne.join('')+'</span><br>'+sliderName[currentSlid].slice(wordOne.length));
-			$('.textHead').html(sliderDescription[currentSlid]);
-			$('header').css('background-image', sliderImg[currentSlid]);
-			$('.circleB').css('opacity','0.4');
-			$('.circleB:nth-child('+(currentSlid+1)+')').css('opacity','1');
+			getSlid();
 		});
 	}
 
-	$('.cB1').click(cB1f);
-	function cB1f(){
+	//bullets circle slider
+
+	$('.cB1').click(function (){
 		currentSlid = 0;
-		var wordOne = [];
+		getSlid();
+	});
 
-		for(var i = 0; i < sliderName[currentSlid].length; i++){
-			if(sliderName[currentSlid][i] != ' '){
-				wordOne.push(sliderName[currentSlid][i]);
-			}else{
-				break;
-			}
-		}
-		$('.wrapperHeadCaption h2').html('<span>'+wordOne.join('')+'</span><br>'+sliderName[currentSlid].slice(wordOne.length));
-		$('.textHead').html(sliderDescription[currentSlid]);
-		$('header').css('background', ''+sliderImg[currentSlid]+'no-repeat center');
-		$('.circleB').css('opacity','0.4');
-		$('.circleB:nth-child('+(currentSlid+1)+')').css('opacity','1');
-	}
-
-	$('.cB2').click(cB2f);
-	function cB2f(){
+	$('.cB2').click(function (){
 		currentSlid = 1;
-		var wordOne = [];
+		getSlid();
+	});
 
-		for(var i = 0; i < sliderName[currentSlid].length; i++){
-			if(sliderName[currentSlid][i] != ' '){
-				wordOne.push(sliderName[currentSlid][i]);
-			}else{
-				break;
-			}
-		}
-		$('.wrapperHeadCaption h2').html('<span>'+wordOne.join('')+'</span><br>'+sliderName[currentSlid].slice(wordOne.length));
-		$('.textHead').html(sliderDescription[currentSlid]);
-		$('header').css('background', ''+sliderImg[currentSlid]+'no-repeat center');
-		$('.circleB').css('opacity','0.4');
-		$('.circleB:nth-child('+(currentSlid+1)+')').css('opacity','1');
-	}
-
-	$('.cB3').click(cB3f);
-	function cB3f(){
+	$('.cB3').click(function (){
 		currentSlid = 2;
-		var wordOne = [];
+		getSlid();
+	});
 
-		for(var i = 0; i < sliderName[currentSlid].length; i++){
-			if(sliderName[currentSlid][i] != ' '){
-				wordOne.push(sliderName[currentSlid][i]);
-			}else{
-				break;
-			}
-		}
-		$('.wrapperHeadCaption h2').html('<span>'+wordOne.join('')+'</span><br>'+sliderName[currentSlid].slice(wordOne.length));
-		$('.textHead').html(sliderDescription[currentSlid]);
-		$('header').css('background', ''+sliderImg[currentSlid]+'no-repeat center');
-		$('.circleB').css('opacity','0.4');
-		$('.circleB:nth-child('+(currentSlid+1)+')').css('opacity','1');
-	}
-
-	$('.cB4').click(cB4f);
-	function cB4f(){
+	$('.cB4').click(function (){
 		currentSlid = 3;
-		var wordOne = [];
+		getSlid();
+	});
 
-		for(var i = 0; i < sliderName[currentSlid].length; i++){
-			if(sliderName[currentSlid][i] != ' '){
-				wordOne.push(sliderName[currentSlid][i]);
-			}else{
-				break;
-			}
-		}
-		$('.wrapperHeadCaption h2').html('<span>'+wordOne.join('')+'</span><br>'+sliderName[currentSlid].slice(wordOne.length));
-		$('.textHead').html(sliderDescription[currentSlid]);
-		$('header').css('background', ''+sliderImg[currentSlid]+'no-repeat center');
-		$('.circleB').css('opacity','0.4');
-		$('.circleB:nth-child('+(currentSlid+1)+')').css('opacity','1');
-	}	
-
-	$('.cB5').click(cB5f);
-	function cB5f(){
+	$('.cB5').click(function (){
 		currentSlid = 4;
-		var wordOne = [];
+		getSlid();
+	});
 
-		for(var i = 0; i < sliderName[currentSlid].length; i++){
-			if(sliderName[currentSlid][i] != ' '){
-				wordOne.push(sliderName[currentSlid][i]);
-			}else{
-				break;
-			}
-		}
-		$('.wrapperHeadCaption h2').html('<span>'+wordOne.join('')+'</span><br>'+sliderName[currentSlid].slice(wordOne.length));
-		$('.textHead').html(sliderDescription[currentSlid]);
-		$('header').css('background', ''+sliderImg[currentSlid]+'no-repeat center');
-		$('.circleB').css('opacity','0.4');
-		$('.circleB:nth-child('+(currentSlid+1)+')').css('opacity','1');
-	}	
 
 });
