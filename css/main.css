@@ -398,47 +398,55 @@ header {
   width: 100%;
   height: 750px;
   position: relative; }
-  .productsAndSolution .logoSect2 {
-    position: relative;
-    z-index: 3;
-    text-align: center;
-    width: 40%;
-    height: 100%; }
-    .productsAndSolution .logoSect2 .maskSect2 {
-      background-color: #000;
-      opacity: 0.80;
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      z-index: -1; }
-    .productsAndSolution .logoSect2 button.seniorBut {
-      margin-right: 150px;
-      margin-top: -50px; }
-    .productsAndSolution .logoSect2 img {
-      width: 80px;
-      position: absolute;
-      top: 20px;
-      left: 40px; }
-    .productsAndSolution .logoSect2 .captionSect2 {
-      margin: auto; }
-      .productsAndSolution .logoSect2 .captionSect2 .wrapperSect2Caption {
-        border: 12px solid rgba(242, 242, 242, 0.15);
-        display: inline-block;
-        padding-right: 40px;
-        margin-top: 120px; }
-        .productsAndSolution .logoSect2 .captionSect2 .wrapperSect2Caption h2 {
-          font-size: 50px;
-          text-transform: uppercase;
-          line-height: 1.1;
-          margin: 10px 0;
-          margin-left: -95px;
-          -webkit-transition: 0.5s;
-          -o-transition: 0.5s;
-          transition: 0.5s;
-          text-align: left;
-          font-family: IntroBold; }
-          .productsAndSolution .logoSect2 .captionSect2 .wrapperSect2Caption h2 span {
-            color: #7AC142; }
+  .productsAndSolution .wrapM {
+    position: absolute;
+    top: 5px;
+    right: 20px;
+    color: #000;
+    z-index: 10; }
+
+.logoSect2 {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  width: 40%;
+  height: 100%; }
+  .logoSect2 .maskSect2 {
+    background-color: #000;
+    opacity: 0.80;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1; }
+  .logoSect2 button.seniorBut {
+    margin-right: 150px;
+    margin-top: -50px; }
+  .logoSect2 img {
+    width: 80px;
+    position: absolute;
+    top: 20px;
+    left: 40px; }
+  .logoSect2 .captionSect2 {
+    margin: auto; }
+
+.wrapperSect2Caption {
+  border: 12px solid rgba(242, 242, 242, 0.15);
+  display: inline-block;
+  padding-right: 40px;
+  margin-top: 120px; }
+  .wrapperSect2Caption h2 {
+    font-size: 50px;
+    text-transform: uppercase;
+    line-height: 1.1;
+    margin: 10px 0;
+    margin-left: -95px;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+    text-align: left;
+    font-family: IntroBold; }
+    .wrapperSect2Caption h2 span {
+      color: #7AC142; }
 
 .descriptionSect2 {
   text-align: left;
@@ -474,11 +482,57 @@ header {
     position: absolute;
     background-color: #fff;
     opacity: 0.9; }
+  .whiteListSect2 ul {
+    z-index: 5;
+    color: #000;
+    position: relative;
+    height: 70%; }
+    .whiteListSect2 ul li {
+      width: 40%;
+      display: inline-block;
+      position: absolute; }
+      .whiteListSect2 ul li:nth-child(1) {
+        top: 100px;
+        left: 100px; }
+      .whiteListSect2 ul li:nth-child(2) {
+        bottom: -50px;
+        left: 100px; }
+      .whiteListSect2 ul li:nth-child(3) {
+        top: 100px;
+        right: 20px; }
+      .whiteListSect2 ul li:nth-child(4) {
+        bottom: -65px;
+        right: 20px; }
+      .whiteListSect2 ul li b {
+        font-family: IntroBold;
+        text-transform: uppercase;
+        font-size: 13px;
+        color: #000; }
+      .whiteListSect2 ul li .lineSect2 {
+        width: 40px;
+        height: 20px;
+        border-bottom: 1px solid #7AC142; }
+      .whiteListSect2 ul li p {
+        font-size: 16px; }
+      .whiteListSect2 ul li .imgWhiteList {
+        width: 5px;
+        height: 5px;
+        -webkit-border-radius: 30px;
+                border-radius: 30px;
+        background-color: #7AC142;
+        color: #fff;
+        text-transform: uppercase;
+        padding: 8px 25px 29px 13px;
+        position: absolute;
+        top: -3px;
+        left: -60px;
+        font-size: 25px;
+        font-family: IntroBold; }
 
 .footDivLogo {
   background-image: url(../img/footerImg.jpg);
   background-repeat: no-repeat;
-  height: 280px;
+  height: 272px;
   width: 40%;
   float: left;
   position: relative; }
@@ -491,7 +545,24 @@ header {
     margin-left: -71px; }
 
 .footDivList {
-  height: 280px;
   width: 60%;
   background-color: #E9EAE9;
-  float: right; }
+  float: right;
+  line-height: 1.6; }
+  .footDivList .linkFooter {
+    float: left;
+    display: inline-block;
+    color: #000;
+    font-size: 14px;
+    padding: 60px; }
+    .footDivList .linkFooter ul li a {
+      color: #000; }
+  .footDivList .contactsFooter {
+    display: inline-block;
+    width: 40%;
+    color: #000;
+    font-size: 14px;
+    float: right;
+    padding: 70px 50px; }
+    .footDivList .contactsFooter li span {
+      color: #878787; }

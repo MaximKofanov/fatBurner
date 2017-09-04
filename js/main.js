@@ -14,10 +14,13 @@ $(function(){
 	var toggleLang = 0;
 	$('#RU').css('opacity', '1');
 	$('#RU.bottomLang').css('color', '#7AC142');
+	$('#EN.FootLang').css('color', '#fff');
 	$('#RU').click(toggleLangf);
 	$('#EN').click(toggleLangf);
 	$('#RU.bottomLang').click(toggleLangf);
 	$('#EN.bottomLang').click(toggleLangf);
+	$('#RU.FootLang').click(toggleLangf);
+	$('#EN.FootLang').click(toggleLangf);
 
 	function toggleLangf(){
 		if(toggleLang === 0){
@@ -25,12 +28,16 @@ $(function(){
 			$('#EN').css('opacity', '1');
 			$('#EN.bottomLang').css('color', '#7AC142');
 			$('#RU.bottomLang').css('color', '#636163');
+			$('#EN.FootLang').css('color', '#fff');
+			$('#RU.FootLang').css('color', '#000');
 			toggleLang++;
 		}else if(toggleLang === 1){
 			$('#RU').css('opacity', '1');
 			$('#EN').css('opacity', '0.7');
 			$('#EN.bottomLang').css('color', '#636163');
 			$('#RU.bottomLang').css('color', '#7AC142');
+			$('#EN.FootLang').css('color', '#000');
+			$('#RU.FootLang').css('color', '#fff');
 			toggleLang--;
 		}
 	};
@@ -91,11 +98,11 @@ $(function(){
 	'Пятое описание пятое описание пятое описание пятое',
 	];
 	var sliderImg = [
-	'url(../img/headFon.jpg)',
-	'url(../img/headFon2.jpg)',
-	'url(../img/headFon.jpg)',
-	'url(../img/headFon2.jpg)',
-	'url(../img/headFon.jpg)'
+	'url(../dist/img/headFon.jpg)',
+	'url(../dist/img/headFon2.jpg)',
+	'url(../dist/img/headFon.jpg)',
+	'url(../dist/img/headFon2.jpg)',
+	'url(../dist/img/headFon.jpg)'
 	];
 
 	var currentSlid = 0;
